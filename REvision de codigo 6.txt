@@ -1,0 +1,43 @@
+/*
+ * 5. Andrea se centra en revisar el código y posteriormente se encarga de corregir
+. 
+ * Ha dificultades pero sigue intentando nuevas cosas hasta que logra que el programa corra correctamente. 
+ * Tiene atención al detalle y se encarga de que el código sea legible.
+ */
+
+package codigo6;
+import java.util.Scanner;
+
+public class Codigo6 {
+	public static void main(String[] args) {
+		
+		Integer[] numbers = new Integer[20];
+
+	    for (int i = 0; i < 20; i++) {
+	      numbers[i] = (int)(Math.random() * 381) + 20;
+	      System.out.println(numbers[i] + " ");
+	    }
+	    
+	    Scanner scanner = new Scanner(System.in);
+	    
+	    System.out.println("¿Qué números quiere resaltar? ");
+	    System.out.println("1 – los múltiplos de 5: ");
+	    System.out.println("2 – los múltiplos de 7: ");
+	    int opcion = scanner.nextInt();
+	    		//Integer.parseInt(System.console().readLine();
+
+	    int multiplo = (opcion == 1) ? 5 : 7;
+	    
+	    
+	    for(int number : numbers) {
+	      if (number % multiplo == 0) {
+	        System.out.println("[" + number + "] ");
+	       }else {
+	        continue;
+	      }
+	    }
+	    
+	    
+	    scanner.close();
+	}
+}

@@ -1,0 +1,40 @@
+Andrea se concentra primero en concer el proposito del codigo para luego comenzar a cambiarlo. 
+ *Hace que corra correctamente el codigo. 5/5
+ *Calificado por Ingrid.
+ */
+
+
+package codigo6;
+
+import java.util.Scanner;
+//se importo scanner
+public class Codigo5 {
+//Se agrega metodo main
+	
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Introduzca un número: ");//Se cambian las comillas por comillas dobles
+        String ni = s.nextLine();
+        int c = Integer.parseInt(ni); //Se agrega Ineger
+
+        int afo = 0;
+        int noAfo = 0;
+
+        while (c > 0) { //se cambia ni por "c" por que al tener ni, se hacia un bucle infinito, ya que la variable no se modificaba
+            int digito = c % 10; //se cambia int por c y se eliminan algunnos parentesis
+            if (digito == 3 || digito == 7 || digito == 8 || digito == 9) {
+                afo++;
+            } else {
+                noAfo++;
+            }
+
+            c /= 10; //se cambia ni por c
+        }
+
+        if (afo > noAfo) {
+            System.out.println("El " + ni + " es un número afortunado.");
+        } else {
+            System.out.println("El " + ni + " no es un número afortunado.");
+        }
+    }
+}
